@@ -1,0 +1,27 @@
+def BinarySearch(arr, low, high, x):
+    
+    if high >= low:
+        mid = low + (high - low) // 2
+        
+        if arr[mid] == x:
+            return mid
+                
+        elif arr[mid] < x:
+            return BinarySearch(arr,mid +1, high, x)
+                
+        elif arr[mid] > x:
+            return BinarySearch(arr, low, mid - 1, x)
+                
+    else:
+        return 0
+    
+if __name__ == '__main__':
+    arr = [2, 4, 7, 9, 11, 18, 21, 24, 32]
+    x = 21
+    
+    result = BinarySearch(arr, 0, len(arr)-1, x)
+    
+    if result != 0:
+        print(f"element {x} is present at {result}")
+    else:
+        print(f"emelent {x} is absent")
