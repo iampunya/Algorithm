@@ -1,3 +1,27 @@
+arr = [1, 2, 3, 5, 7, 18, 21, 24, 32, 44, 55]
+key = 21
+low = 0
+high =len(arr)-1
+found =  False
+
+while not found:
+    mid = low + (high - low) // 2
+    
+    if arr[mid] == key:
+        found = True
+        break
+        
+    elif arr[mid] < key:
+        low = mid + 1
+       
+    else:
+        high = mid - 1
+if found:
+    print(f"Value {key} is present at position {mid}")
+else:
+    print(f"Value {key} is absent")
+
+*********************************************************************************************************
 def BinarySearch(arr, low, high, x):
     
     if high >= low:
@@ -25,3 +49,5 @@ if __name__ == '__main__':
         print(f"element {x} is present at {result}")
     else:
         print(f"emelent {x} is absent")
+
+*********************************************************************************************************
